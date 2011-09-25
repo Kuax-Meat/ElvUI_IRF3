@@ -90,9 +90,13 @@ function IRF3:CreateElvUI(self)
 	self.name:SetJustifyV("TOP")
 	self.name:SetJustifyH("CENTER")
 	self.name:SetSpacing(4)
-	
-	--IRF3:NameSkin(self)
 end
+
+---------------
+-- ICON SKIN --
+---------------
+
+
 
 ---------------
 -- TEXT SKIN --
@@ -262,7 +266,6 @@ function InvenRaidFrames3Member_UpdateNameColor(self)
 		self.name:SetTextColor(IRF3.db.colors.name[1], IRF3.db.colors.name[2], IRF3.db.colors.name[3])
 	end
 end
-
 -------------------
 -- TEXT SKIN END --
 -------------------
