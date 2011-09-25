@@ -7,20 +7,34 @@ print("IRF3 Completely Loaded")
 local _G = _G
 local IRF3 = InvenRaidFrames3
 local SM = LibStub("LibSharedMedia-3.0")
-print(IRF3)
+local widthvalue, heightvalue = 0, 0
+
+if (E.screenwidth / E.screenheight) == 1.6 then
+	if IsAddOnLoaded("Elvui_RaidDPS") then
+		widthvalue = ((ChatLBGDummy:GetWidth() - (27)) / 5)
+	elseif IsAddOnLoaded("Elvui_RaidHeal") then
+		widthvalue = ((ElvuiActionBarBackground:GetWidth() - (27)) / 5)
+	end
+else
+	if IsAddOnLoaded("Elvui_RaidDPS") then
+		widthvalue = ((ChatLBGDummy:GetWidth() - (28)) / 5)
+	elseif IsAddOnLoaded("Elvui_RaidHeal") then
+		widthvalue = ((ElvuiActionBarBackground:GetWidth() - (28)) / 5)
+	end
+end
 
 --
 
 function IRF3:SetupAll(update)
 	for _, header in pairs(IRF3.headers) do
 		for _, member in pairs(header.members) do
-			IRF3:CreateElvUI(member)
 			member:Setup()
+			IRF3:CreateElvUI(member)
 		end
 	end
 	for _, member in pairs(IRF3.petHeader.members) do
-		IRF3:CreateElvUI(member)
 		member:Setup()
+		IRF3:CreateElvUI(member)
 	end
 	self.db.units.texture = "ElvUI Norm"
 	self.db.font.file = "ElvUI Font"
@@ -28,6 +42,8 @@ function IRF3:SetupAll(update)
 	self.db.partyTag = false
 	self.db.colors.MANA = { 0.31, 0.45, 0.63 }
 	self.db.colors.RAGE = { 0.78, 0.25, 0.25 }
+	self.db.usePet = false
+	self.db.offset = 8
 end
 
 function IRF3:CreateElvUI(self)
