@@ -1,0 +1,8 @@
+﻿## Interface: 40200
+## Author: MEAT
+## Version: 0.1
+## Title: |cff1784d1ElvUI|r InvenRaidFrames3 Skin
+## Notes: InvenRaidFrames3 Skin for |cff1784d1ElvUI|r
+## RequiredDeps: InvenRaidFrames3
+
+skin.lua
